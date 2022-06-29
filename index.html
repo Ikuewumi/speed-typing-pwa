@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="theme-color" content="#f7f7f7">
+   <link rel="manifest" href="./manifest.json">
+   <link rel="shortcut icon" href="./icons/logo-72.png" type="image/png">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+   
+   <script defer src="./js/main.js"></script>
+   <title>Speed Typing</title>
+   <link rel="stylesheet" href="./css/master.css">
+</head>
+
+<body>
+
+   <main>
+      <div id="settings">
+         <svg 
+         class="settings"
+         viewBox="0 0 26 26">
+            <use href="#more_logo"></use>
+         </svg>
+      </div>
+
+      <section class="output">
+
+         <time>0</time>
+         <span id="output__word">sarcophagus</span>
+
+      </section>
+      <section class="input">
+
+         <input
+            id="input__word" 
+            type="text"
+            placeholder="Type the word above"
+            aria-placeholder="Type the word above"
+         />
+
+      </section>
+      <section class="scores">
+
+         <span id="score" class="scores__score">
+            <strong>0</strong>
+            <span>score</span>
+         </span>
+         <span id="highscore" class="scores__highscore">
+            <strong>0</strong>
+            <span>highscore</span>
+         </span>
+
+      </section>
+
+   </main>
+
+   <article id="extras">
+
+      <form>
+         <h3>settings</h3>
+         <div class="extras__form">
+
+            <div class="field">
+               <label for="type">Type: </label>
+               <select name="type" id="type" disabled>
+                  <option value="normal">Normal</option>
+                  <option value="blitz">Blitz</option>
+               </select>
+            </div>
+            <div class="field">
+               <label for="mode">Mode: </label>
+               <select name="mode" id="mode" disabled>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+               </select>
+            </div>
+            <div class="field">
+               <label for="time">Blitz Time: </label>
+               <select name="time" id="time" disabled>
+                  <option value="one">1min</option>
+                  <option value="two">2min</option>
+                  <option value="five">5min</option>
+               </select>
+            </div>
+         </div>
+         <p>Tap <code>Space</code> to restart the game</p>
+      </form>
+
+   </article>
+
+   <svg style="display: none;" aria-hidden hidden>
+   
+      <symbol
+         id="refresh_logo"
+         viewBox="0 0 26 26"   
+      >
+         <path d="M13.8125 0C7.878906 0 4.082031 4.292969 4 10L0.5 10C0.300781 10 0.09375 10.113281 0.09375 10.3125C-0.0078125 10.511719 -0.0078125 10.710938 0.09375 10.8125L6.09375 18.5C6.195313 18.601563 6.300781 18.6875 6.5 18.6875C6.699219 18.6875 6.804688 18.601563 6.90625 18.5L12.90625 10.8125C13.007813 10.710938 13.007813 10.511719 12.90625 10.3125C12.804688 10.113281 12.601563 10 12.5 10L9 10C9.066406 2.464844 12.921875 0.789063 13.8125 0.09375C14.011719 -0.0078125 14.011719 0 13.8125 0 Z M 19.5 7.34375C19.351563 7.34375 19.195313 7.398438 19.09375 7.5L13.09375 15.1875C12.992188 15.386719 13 15.585938 13 15.6875C13.101563 15.886719 13.304688 16 13.40625 16L17 16C16.933594 23.535156 13.078125 25.210938 12.1875 25.90625C11.988281 26.007813 11.988281 26 12.1875 26C18.121094 26 21.917969 21.707031 22 16L25.40625 16C25.605469 16 25.8125 15.886719 25.8125 15.6875C26.011719 15.488281 26.007813 15.289063 25.90625 15.1875L19.90625 7.5C19.804688 7.398438 19.648438 7.34375 19.5 7.34375Z" />
+      </symbol>
+
+      <symbol 
+         id="more_logo"
+         viewBox="0 0 26 26">
+         <path d="M3 10C1.34375 10 0 11.34375 0 13C0 14.65625 1.34375 16 3 16C4.65625 16 6 14.65625 6 13C6 11.34375 4.65625 10 3 10 Z M 13 10C11.34375 10 10 11.34375 10 13C10 14.65625 11.34375 16 13 16C14.65625 16 16 14.65625 16 13C16 11.34375 14.65625 10 13 10 Z M 23 10C21.34375 10 20 11.34375 20 13C20 14.65625 21.34375 16 23 16C24.65625 16 26 14.65625 26 13C26 11.34375 24.65625 10 23 10Z" />
+      </symbol>
+      
+   </svg>
+
+   <script>
+
+      if ('serviceWorker' in navigator) {
+         navigator.serviceWorker.register('./sw.js')
+            .catch(e => console.error(e)) 
+      }
+
+
+   </script>
+</body>
+
+</html>
