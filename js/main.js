@@ -166,7 +166,7 @@ class Game {
         this.inputEl.focus();
         this.wordEl.textContent = this.words[this.index];
         this.inputEl.addEventListener('keyup', (e) => {
-            if (e.key === " ") {
+            if (e.key === " " || e.keyCode.toLowerCase() === "space") {
                 this.stopClock();
                 this.stopGame();
                 this.init();
